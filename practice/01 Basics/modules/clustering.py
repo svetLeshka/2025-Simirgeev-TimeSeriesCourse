@@ -66,7 +66,7 @@ class TimeSeriesHierarchicalClustering:
         self: the fitted model
         """
 
-       # INSERT YOUR CODE
+        self.model = AgglomerativeClustering(n_clusters=self.n_clusters, compute_distances=True).fit(distance_matrix)
 
         return self
 
