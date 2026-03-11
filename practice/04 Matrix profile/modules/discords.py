@@ -21,7 +21,16 @@ def top_k_discords(matrix_profile: dict, top_k: int = 3) -> dict:
     discords_dist = []
     discords_nn_idx = []
 
-    # INSERT YOUR CODE
+    m = 96
+    excl_zone = int(np.ceil(m / 2))
+    zoned_matrix_profile = np.copy(matrix_profile['mp'])
+
+    for i in range(top_k):
+        max_index = np.argmax(zoned_matrix_profile)
+        discords_idx.append(max_index)
+        discords_dist.append(matrix_profile['mp'][max_index])
+        discords_nn_idx.append(matrix_profile['mpi'][max_index])
+        zoned_matrix_profile = apply_exclusion_zone(zoned_matrix_profile, max_index, excl_zone, -np.inf)
 
     return {
         'indices' : discords_idx,

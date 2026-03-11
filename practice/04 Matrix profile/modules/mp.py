@@ -23,7 +23,7 @@ def compute_mp(ts1: np.ndarray, m: int, exclusion_zone: int = None, ts2: np.ndar
             (matrix profile, matrix profile index, subsequence length, exclusion zone, the first and second time series)
     """
     
-    # INSERT YOUR CODE
+    mp = stumpy.stump(ts1, m=m)
 
     return {'mp': mp[:, 0],
             'mpi': mp[:, 1],

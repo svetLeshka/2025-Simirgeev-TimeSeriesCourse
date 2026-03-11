@@ -80,4 +80,5 @@ class PairwiseDistance:
                     matrix_values[i, j] = self._choose_distance()(input_data[i], input_data[j])
                 else:
                     matrix_values[i, j] = self._choose_distance()(z_normalize(input_data[i]), z_normalize(input_data[j]))
+                    #matrix_values[i, j] = self._choose_distance()(input_data[i], input_data[j])
         return matrix_values
